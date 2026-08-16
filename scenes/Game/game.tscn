@@ -1,15 +1,13 @@
 [gd_scene format=4 uid="uid://cmsk3y7yr10u0"]
 
-[ext_resource type="PackedScene" uid="uid://djf4p0wha1dwc" path="res://entities/player.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://dbtqsqde1vs0s" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain16x16.png" id="2_yqjtg"]
-[ext_resource type="Texture2D" uid="uid://cto8rw5qssn2p" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="3_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://b6iqyjy4miiaq" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="4_lbhrr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4o7o"]
-size = Vector2(608, 15)
+[ext_resource type="PackedScene" uid="uid://djf4p0wha1dwc" path="res://entities/player.tscn" id="1_bfxw3"]
+[ext_resource type="Texture2D" uid="uid://cto8rw5qssn2p" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="2_7dfdq"]
+[ext_resource type="Texture2D" uid="uid://b6iqyjy4miiaq" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="3_54y65"]
+[ext_resource type="PackedScene" uid="uid://ll0jpwf5oisk" path="res://scenes/Verao/BackgroundVerao.tscn" id="4_t5wam"]
+[ext_resource type="Script" uid="uid://duh0mhkh6g8ph" path="res://scripts/Agua/AguaCollider.gd" id="5_7dfdq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
-texture = ExtResource("3_lnu2h")
+texture = ExtResource("2_7dfdq")
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
@@ -86,56 +84,42 @@ texture = ExtResource("3_lnu2h")
 4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
-texture = ExtResource("4_lbhrr")
+texture = ExtResource("3_54y65")
 0:0/0 = 0
-0:0/0/z_index = -1
+0:0/0/modulate = Color(1, 1, 1, 0.827451)
 1:0/0 = 0
-1:0/0/z_index = -1
+1:0/0/modulate = Color(1, 1, 1, 0.827451)
 0:1/0 = 0
-0:1/0/z_index = -1
+0:1/0/modulate = Color(1, 1, 1, 0.827451)
 1:1/0 = 0
-1:1/0/z_index = -1
+1:1/0/modulate = Color(1, 1, 1, 0.827451)
 
 [sub_resource type="TileSet" id="TileSet_v5v4v"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 sources/1 = SubResource("TileSetAtlasSource_iywne")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4o7o"]
+size = Vector2(80, 16)
+
 [node name="Game" type="Node2D" unique_id=150989466]
 
-[node name="Player" parent="." unique_id=1955885901 instance=ExtResource("1_uwrxv")]
-position = Vector2(33, 33)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=894171549]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1687697122]
-position = Vector2(304, 185.5)
-shape = SubResource("RectangleShape2D_m4o7o")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D" unique_id=1689671206]
-texture_repeat = 2
-position = Vector2(-304, -7.5)
-texture = ExtResource("2_yqjtg")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 608, 16)
-
-[node name="Plataforma" type="StaticBody2D" parent="." unique_id=1350546263]
-position = Vector2(551, 120)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma" unique_id=1008073202]
-shape = SubResource("RectangleShape2D_m4o7o")
-one_way_collision = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Plataforma/CollisionShape2D" unique_id=1433292430]
-texture_repeat = 2
-position = Vector2(-304, -7.5)
-texture = ExtResource("2_yqjtg")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 608, 16)
+[node name="Player" parent="." unique_id=1955885901 instance=ExtResource("1_bfxw3")]
+position = Vector2(68, 27)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=763347231]
 position = Vector2(150, 148)
-tile_map_data = PackedByteArray("AAD9/wAAAAADAAEAAAD9/wEAAAADAAYAAAD+/wAAAAADAAMAAAD+/wEAAAAEAAYAAAD//wAAAQAAAAEAAAD//wEAAAAEAAYAAAAAAAAAAQAAAAEAAAAAAAEAAAAEAAYAAAABAAEAAAAEAAYAAAACAAAAAQAAAAEAAAACAAEAAAAEAAYAAAADAAAAAQAAAAEAAAADAAEAAAAEAAYAAAAEAAAAAAAFAAMAAAAEAAEAAAAEAAYAAAABAAAAAQAAAAEAAAD+////AAADAAEAAAADAP//AAAEAAEAAAAFAAEAAAAFAAYAAAAFAAAAAAAHAAMAAAAEAP//AAAHAAMAAAACAP//AAAEAAEAAAABAP//AAAEAAEAAAD/////AQAAAAAAAAAAAP//AQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9/wAAAAAGAAMAAAD9/wEAAAAEAAYAAAD+/wAAAAADAAMAAAD+/wEAAAAEAAYAAAD//wAAAQAAAAEAAAD//wEAAAAEAAYAAAAAAAAAAQAAAAEAAAAAAAEAAAAEAAYAAAABAAEAAAAEAAYAAAACAAAAAQAAAAEAAAACAAEAAAAEAAYAAAADAAAAAQAAAAEAAAADAAEAAAAEAAYAAAAEAAAAAAAFAAMAAAAEAAEAAAAEAAYAAAABAAAAAQAAAAEAAAD+////AAADAAEAAAADAP//AAAEAAEAAAAFAAEAAAAFAAYAAAAFAAAAAAAGAAMAAAAEAP//AAAHAAMAAAACAP//AAAEAAEAAAABAP//AAAEAAEAAAD/////AQAAAAAAAAAAAP//AQAAAAAAAAD3//f/AAADAAEAAAD4//f/AAAFAAEAAAD3//j/AAADAAIAAAD3//n/AAADAAIAAAD3//r/AAADAAIAAAD3//v/AAADAAIAAAD3//z/AAADAAIAAAD3//3/AAADAAIAAAD3//7/AAADAAIAAAD3////AAADAAIAAAD3/wAAAAADAAIAAAD3/wEAAAADAAYAAAD4//j/AAAFAAIAAAD4//n/AAAFAAIAAAD4//r/AAAFAAIAAAD4//v/AAAFAAIAAAD4//z/AAAFAAIAAAD4//3/AAAFAAIAAAD4//7/AAAFAAIAAAD4////AAAFAAIAAAD4/wAAAAAFAAMAAAD4/wEAAAAEAAYAAAD5/wEAAAAEAAYAAAD6/wEAAAAEAAYAAAD7/wEAAAAEAAYAAAD8/wEAAAAEAAYAAAD5/wAAAAAGAAMAAAD6/wAAAAAGAAMAAAD7/wAAAAAGAAMAAAD8/wAAAAAGAAMAAAAGAAAAAAAGAAMAAAAHAAAAAAAGAAMAAAAIAAAAAAAGAAMAAAAJAAAAAAAGAAMAAAAKAAAAAAAGAAMAAAALAAAAAAAGAAMAAAAMAAAAAAAGAAMAAAANAAAAAAAGAAMAAAAOAAAAAAAGAAMAAAAPAAAAAAAGAAMAAAAQAAAAAAAGAAMAAAARAAAAAAAGAAMAAAASAAAAAAAGAAMAAAATAAAAAAAGAAMAAAAUAAAAAAAGAAMAAAAVAAAAAAAGAAMAAAAWAAAAAAAGAAMAAAAXAAAAAAAGAAMAAAAYAAAAAAAGAAMAAAAZAAAAAAAGAAMAAAAaAAAAAAAGAAMAAAAbAAAAAAAGAAMAAAAcAAAAAAAGAAMAAAAdAAAAAAAGAAMAAAAeAAAAAAAGAAMAAAAfAAAAAAAGAAMAAAAgAAAAAAAGAAMAAAAhAAAAAAAGAAMAAAAiAAAAAAAGAAMAAAA=")
 tile_set = SubResource("TileSet_v5v4v")
+
+[node name="BackgroundVerao" parent="." unique_id=566763063 instance=ExtResource("4_t5wam")]
+
+[node name="Agua" type="Node" parent="." unique_id=492260058]
+
+[node name="Area2D" type="Area2D" parent="Agua" unique_id=1518184449]
+position = Vector2(145, 153)
+script = ExtResource("5_7dfdq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Agua/Area2D" unique_id=580418134]
+position = Vector2(29, 3)
+shape = SubResource("RectangleShape2D_m4o7o")

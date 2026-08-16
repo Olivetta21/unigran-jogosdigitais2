@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c6v44cjh3gy8a" path="res://sprites/Sprite Pack 6/1 - Penguin/Idle (16 x 16).png" id="2_rfe5m"]
 [ext_resource type="Texture2D" uid="uid://bsy17pb48h6we" path="res://sprites/Sprite Pack 6/1 - Penguin/Blink (16 x 16).png" id="3_qly61"]
 [ext_resource type="Texture2D" uid="uid://cp8vhxmx7h8vt" path="res://sprites/Sprite Pack 6/1 - Penguin/Waddling (16 x 16).png" id="4_qsoyl"]
+[ext_resource type="Texture2D" uid="uid://bixirlh6l3utr" path="res://sprites/Sprite Pack 6/1 - Penguin/Sitting (16 x 16).png" id="5_i623q"]
 [ext_resource type="Texture2D" uid="uid://curaeimokqijs" path="res://sprites/Sprite Pack 6/1 - Penguin/Jump (16 x 16).png" id="6_ef06p"]
+[ext_resource type="Texture2D" uid="uid://b8wm6t7wg4akd" path="res://sprites/Sprite Pack 6/1 - Penguin/Swimming (16 x 16).png" id="7_6nm46"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m4o7o"]
 radius = 8.0
@@ -31,6 +33,14 @@ region = Rect2(48, 0, 16, 16)
 atlas = ExtResource("2_rfe5m")
 region = Rect2(64, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cicqb"]
+atlas = ExtResource("5_i623q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj0ki"]
+atlas = ExtResource("5_i623q")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dchgp"]
 atlas = ExtResource("4_qsoyl")
 region = Rect2(0, 0, 16, 16)
@@ -54,6 +64,22 @@ region = Rect2(64, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rie4"]
 atlas = ExtResource("4_qsoyl")
 region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp3pk"]
+atlas = ExtResource("7_6nm46")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cgp7q"]
+atlas = ExtResource("7_6nm46")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n8aq"]
+atlas = ExtResource("7_6nm46")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28s6d"]
+atlas = ExtResource("7_6nm46")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m4o7o"]
 animations = [{
@@ -104,6 +130,17 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cicqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj0ki")
+}],
+"loop": 1,
+"name": &"idle_submerged",
+"speed": 1.0
+}, {
+"frames": [{
 "duration": 10.0,
 "texture": ExtResource("6_ef06p")
 }],
@@ -133,9 +170,26 @@ animations = [{
 "loop": 1,
 "name": &"running",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp3pk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cgp7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n8aq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28s6d")
+}],
+"loop": 1,
+"name": &"swimming",
+"speed": 10.0
 }]
 
-[node name="Player" type="CharacterBody2D" unique_id=1955885901]
+[node name="Player" type="CharacterBody2D" unique_id=1955885901 groups=["player"]]
 script = ExtResource("1_merdl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=996115021]
@@ -146,4 +200,8 @@ shape = SubResource("CapsuleShape2D_m4o7o")
 position = Vector2(-4.7683716e-07, 0.50000113)
 scale = Vector2(1.25, 1.6875)
 sprite_frames = SubResource("SpriteFrames_m4o7o")
-animation = &"jumping"
+animation = &"idle_submerged"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=163319319]
+position = Vector2(39, -18)
+position_smoothing_enabled = true
