@@ -4,19 +4,24 @@ extends CharacterBody2D
 
 const SPEED = 80.0
 const JUMP_VELOCITY = -300.0
+var winner = false
 
 class Submergido:
-	static var submergido = false
+	static var submergido = 0
 	static var acabouDeSubmerger = false
 	static var acabouDeSair = false
 	
 	static func submerger():
-		submergido = true
+		if esta_submergido(): 
+			submergido += 1
+			return
+		submergido += 1
 		acabouDeSubmerger = true
 		acabouDeSair = false
 	
 	static func sair():
-		submergido = false
+		submergido -= 1
+		if esta_submergido(): return
 		acabouDeSubmerger = false
 		acabouDeSair = true
 	
@@ -31,7 +36,7 @@ class Submergido:
 		return a
 	
 	static func esta_submergido():
-		return submergido
+		return submergido > 0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -66,8 +71,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if on_floor:
-			if Submergido.esta_submergido(): Anim.play("idle_submerged")
-			else: Anim.play("idle")
+			if winner: Anim.play("danca")
+			else:
+				if Submergido.esta_submergido(): Anim.play("idle_submerged")
+				else: Anim.play("idle")
 	
 	if direction > 0: Anim.flip_h = false;
 	elif direction < 0: Anim.flip_h = true;
@@ -75,6 +82,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		if velocity.y > 0: Anim.play("fall")
 		elif velocity.y < 0: Anim.play("jumping")
-	
 	
 	move_and_slide()

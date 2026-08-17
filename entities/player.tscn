@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgenoliqcxc85" path="res://scripts/player.gd" id="1_merdl"]
 [ext_resource type="Texture2D" uid="uid://8pjfin318f71" path="res://sprites/Sprite Pack 6/1 - Penguin/Falling (16 x 16).png" id="2_6nm46"]
+[ext_resource type="Texture2D" uid="uid://insyti2pc88v" path="res://sprites/Sprite Pack 6/1 - Penguin/Victory_Dance (16 x 16).png" id="2_ef06p"]
 [ext_resource type="Texture2D" uid="uid://c6v44cjh3gy8a" path="res://sprites/Sprite Pack 6/1 - Penguin/Idle (16 x 16).png" id="2_rfe5m"]
 [ext_resource type="Texture2D" uid="uid://bsy17pb48h6we" path="res://sprites/Sprite Pack 6/1 - Penguin/Blink (16 x 16).png" id="3_qly61"]
 [ext_resource type="Texture2D" uid="uid://cp8vhxmx7h8vt" path="res://sprites/Sprite Pack 6/1 - Penguin/Waddling (16 x 16).png" id="4_qsoyl"]
@@ -10,8 +11,28 @@
 [ext_resource type="Texture2D" uid="uid://b8wm6t7wg4akd" path="res://sprites/Sprite Pack 6/1 - Penguin/Swimming (16 x 16).png" id="7_6nm46"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m4o7o"]
-radius = 8.0
+radius = 6.0
 height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fruft"]
+atlas = ExtResource("2_ef06p")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slxql"]
+atlas = ExtResource("2_ef06p")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evlff"]
+atlas = ExtResource("2_ef06p")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7db53"]
+atlas = ExtResource("2_ef06p")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plaij"]
+atlas = ExtResource("2_ef06p")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6nm46"]
 atlas = ExtResource("2_rfe5m")
@@ -83,6 +104,26 @@ region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m4o7o"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fruft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slxql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evlff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7db53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plaij")
+}],
+"loop": 1,
+"name": &"danca",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_6nm46")
@@ -200,7 +241,8 @@ shape = SubResource("CapsuleShape2D_m4o7o")
 position = Vector2(-4.7683716e-07, 0.50000113)
 scale = Vector2(1.25, 1.6875)
 sprite_frames = SubResource("SpriteFrames_m4o7o")
-animation = &"idle_submerged"
+animation = &"danca"
+frame_progress = 0.6165378
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=163319319]
 position = Vector2(39, -18)

@@ -18,11 +18,11 @@ scroll_offset = Vector2(-144, 74)
 
 [node name="ceu" type="Sprite2D" parent="Parallax_FundoDistante" unique_id=1888114583]
 texture_repeat = 2
-position = Vector2(0, -104)
+position = Vector2(0, -566)
 texture = ExtResource("1_vtj05")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 208)
+region_rect = Rect2(0, 0, 10000, 600)
 
 [node name="montanha" type="Sprite2D" parent="Parallax_FundoDistante" unique_id=408903368]
 texture_repeat = 2
@@ -90,7 +90,7 @@ position = Vector2(0, 80)
 texture = ExtResource("7_ntkoi")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 128)
+region_rect = Rect2(0, 0, 10000, 256)
 
 [node name="tinygrass" type="Sprite2D" parent="Parallax_Subsolo" unique_id=841034859]
 texture_repeat = 2
