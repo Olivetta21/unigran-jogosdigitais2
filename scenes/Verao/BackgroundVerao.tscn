@@ -9,12 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://biv4t7nimre42" path="res://sprites/Seasonal Tilesets/1 - Grassland/Terrain16x16.png" id="7_ntkoi"]
 [ext_resource type="Texture2D" uid="uid://417otembcohx" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/tinygrass16x4.png" id="8_sykrp"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4o7o"]
+
 [node name="BackgroundVerao" type="Node" unique_id=566763063]
 
 [node name="Parallax_FundoDistante" type="Parallax2D" parent="." unique_id=1442712875]
 z_index = -10
 scroll_scale = Vector2(0.1, 1)
-scroll_offset = Vector2(-144, 74)
+scroll_offset = Vector2(-338, 117)
+repeat_size = Vector2(288, 0)
+autoscroll = Vector2(-8, 0)
 
 [node name="ceu" type="Sprite2D" parent="Parallax_FundoDistante" unique_id=1888114583]
 texture_repeat = 2
@@ -22,7 +26,7 @@ position = Vector2(0, -566)
 texture = ExtResource("1_vtj05")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 600)
+region_rect = Rect2(0, 0, 3600, 600)
 
 [node name="montanha" type="Sprite2D" parent="Parallax_FundoDistante" unique_id=408903368]
 texture_repeat = 2
@@ -30,7 +34,10 @@ position = Vector2(0, -126)
 texture = ExtResource("2_vccre")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 208)
+region_rect = Rect2(0, 0, 3600, 208)
+
+[node name="ceuanimado" type="AnimatedSprite2D" parent="Parallax_FundoDistante" unique_id=609535328]
+sprite_frames = SubResource("SpriteFrames_m4o7o")
 
 [node name="nuvens" type="Sprite2D" parent="Parallax_FundoDistante" unique_id=780116487]
 texture_repeat = 2
@@ -38,12 +45,12 @@ position = Vector2(0, -126)
 texture = ExtResource("3_e0tho")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 208)
+region_rect = Rect2(0, 0, 3600, 208)
 
 [node name="Parallax_ArvoresDistantes" type="Parallax2D" parent="." unique_id=558163338]
 z_index = -10
 scroll_scale = Vector2(0.2, 1)
-scroll_offset = Vector2(-144, 64)
+scroll_offset = Vector2(-338, 107)
 
 [node name="arvoresdistantes" type="Sprite2D" parent="Parallax_ArvoresDistantes" unique_id=1598279343]
 texture_repeat = 2
@@ -51,12 +58,12 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_cito2")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 208)
+region_rect = Rect2(0, 0, 7200, 208)
 
 [node name="Parallax_Arvores" type="Parallax2D" parent="." unique_id=339920878]
 z_index = -10
 scroll_scale = Vector2(0.3, 1)
-scroll_offset = Vector2(-144, 50)
+scroll_offset = Vector2(-338, 93)
 
 [node name="arvores" type="Sprite2D" parent="Parallax_Arvores" unique_id=1205811119]
 texture_repeat = 2
@@ -64,12 +71,12 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_by6a4")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 208)
+region_rect = Rect2(0, 0, 7200, 208)
 
 [node name="Parallax_ArvoresProximas" type="Parallax2D" parent="." unique_id=1892462451]
 z_index = -10
 scroll_scale = Vector2(0.4, 1)
-scroll_offset = Vector2(-144, 76)
+scroll_offset = Vector2(-338, 119)
 
 [node name="arvoresproximas" type="Sprite2D" parent="Parallax_ArvoresProximas" unique_id=2091452570]
 texture_repeat = 2
@@ -77,12 +84,13 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_mei6f")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 208)
+region_rect = Rect2(0, 0, 7200, 208)
 
 [node name="Parallax_Subsolo" type="Parallax2D" parent="." unique_id=1042843652]
 z_index = -10
 scroll_scale = Vector2(0.9, 1)
-scroll_offset = Vector2(-144, 76)
+scroll_offset = Vector2(-338, 119)
+autoscroll = Vector2(-20, 0)
 
 [node name="subsolo" type="Sprite2D" parent="Parallax_Subsolo" unique_id=1131955009]
 texture_repeat = 2
@@ -90,7 +98,7 @@ position = Vector2(0, 80)
 texture = ExtResource("7_ntkoi")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 256)
+region_rect = Rect2(0, 0, 3600, 256)
 
 [node name="tinygrass" type="Sprite2D" parent="Parallax_Subsolo" unique_id=841034859]
 texture_repeat = 2
@@ -98,4 +106,4 @@ position = Vector2(0, 77)
 texture = ExtResource("8_sykrp")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 10000, 4)
+region_rect = Rect2(0, 0, 3600, 4)

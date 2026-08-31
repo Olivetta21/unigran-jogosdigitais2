@@ -1,0 +1,195 @@
+[gd_scene format=4 uid="uid://dx48b5yds2l50"]
+
+[ext_resource type="PackedScene" uid="uid://djf4p0wha1dwc" path="res://entities/player.tscn" id="1_hgi2a"]
+[ext_resource type="TileSet" uid="uid://3x0pqko8faqx" path="res://tiles/terrain.tres" id="2_p7sud"]
+[ext_resource type="Texture2D" uid="uid://dsyku1nnjxxew" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="3_l41xp"]
+[ext_resource type="TileSet" uid="uid://4cpcvsp8nix7" path="res://tiles/decoration.tres" id="3_p7sud"]
+[ext_resource type="Texture2D" uid="uid://4o82hbg03tjt" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="4_l41xp"]
+[ext_resource type="Texture2D" uid="uid://dotjdlm5dc7u5" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="5_iiq2t"]
+[ext_resource type="Texture2D" uid="uid://4gvaq16xsruq" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="6_upboy"]
+[ext_resource type="Texture2D" uid="uid://ecih5sgsws3o" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_iprrn"]
+[ext_resource type="Texture2D" uid="uid://dh2chjsscdb3k" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="8_bspok"]
+[ext_resource type="Texture2D" uid="uid://ypjgs3am7nmm" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="9_gdii1"]
+[ext_resource type="Texture2D" uid="uid://biv4t7nimre42" path="res://sprites/Seasonal Tilesets/1 - Grassland/Terrain16x16.png" id="10_jcb0n"]
+[ext_resource type="Texture2D" uid="uid://417otembcohx" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/tinygrass16x4.png" id="11_e52uu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiq2t"]
+atlas = ExtResource("3_l41xp")
+region = Rect2(0, 156, 72, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upboy"]
+atlas = ExtResource("3_l41xp")
+region = Rect2(72, 156, 72, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iprrn"]
+atlas = ExtResource("3_l41xp")
+region = Rect2(144, 156, 72, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bspok"]
+atlas = ExtResource("3_l41xp")
+region = Rect2(216, 156, 72, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4o7o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiq2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upboy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iprrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bspok")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=673082563]
+position = Vector2(-122, 168)
+
+[node name="BackgroundVerao" type="Node" parent="." unique_id=566763063]
+
+[node name="Parallax_FundoDistante" type="Parallax2D" parent="BackgroundVerao" unique_id=1442712875]
+z_index = -10
+scroll_scale = Vector2(0.1, 1)
+scroll_offset = Vector2(-338, 117)
+repeat_size = Vector2(288, 0)
+repeat_times = 3
+
+[node name="ceu" type="Sprite2D" parent="BackgroundVerao/Parallax_FundoDistante" unique_id=1888114583]
+texture_repeat = 2
+position = Vector2(0, -566)
+texture = ExtResource("4_l41xp")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3600, 600)
+
+[node name="montanha" type="Sprite2D" parent="BackgroundVerao/Parallax_FundoDistante" unique_id=408903368]
+texture_repeat = 2
+position = Vector2(0, -126)
+texture = ExtResource("5_iiq2t")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3600, 208)
+
+[node name="Parallax_FundoDistante2" type="Parallax2D" parent="BackgroundVerao" unique_id=1277410555]
+z_index = -10
+scroll_scale = Vector2(0.1, 0.5)
+scroll_offset = Vector2(341, 85)
+repeat_size = Vector2(288, 0)
+autoscroll = Vector2(-8, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundVerao/Parallax_FundoDistante2" unique_id=558366464]
+texture = ExtResource("6_upboy")
+
+[node name="Parallax_ArvoresDistantes" type="Parallax2D" parent="BackgroundVerao" unique_id=558163338]
+z_index = -10
+scroll_scale = Vector2(0.2, 1)
+scroll_offset = Vector2(-338, 107)
+
+[node name="arvoresdistantes" type="Sprite2D" parent="BackgroundVerao/Parallax_ArvoresDistantes" unique_id=1598279343]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_iprrn")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 7200, 208)
+
+[node name="Parallax_Arvores" type="Parallax2D" parent="BackgroundVerao" unique_id=339920878]
+z_index = -10
+scroll_scale = Vector2(0.3, 1)
+scroll_offset = Vector2(-338, 93)
+
+[node name="arvores" type="Sprite2D" parent="BackgroundVerao/Parallax_Arvores" unique_id=1205811119]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_bspok")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 7200, 208)
+
+[node name="Parallax_ArvoresProximas" type="Parallax2D" parent="BackgroundVerao" unique_id=1892462451]
+z_index = -10
+scroll_scale = Vector2(0.4, 1)
+scroll_offset = Vector2(-338, 119)
+
+[node name="arvoresproximas" type="Sprite2D" parent="BackgroundVerao/Parallax_ArvoresProximas" unique_id=2091452570]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_gdii1")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 7200, 208)
+
+[node name="Parallax_Subsolo" type="Parallax2D" parent="BackgroundVerao" unique_id=1042843652]
+z_index = -10
+scroll_scale = Vector2(0.9, 1)
+scroll_offset = Vector2(-338, 119)
+
+[node name="subsolo" type="Sprite2D" parent="BackgroundVerao/Parallax_Subsolo" unique_id=1131955009]
+texture_repeat = 2
+position = Vector2(0, 80)
+texture = ExtResource("10_jcb0n")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3600, 256)
+
+[node name="tinygrass" type="Sprite2D" parent="BackgroundVerao/Parallax_Subsolo" unique_id=841034859]
+texture_repeat = 2
+position = Vector2(0, 77)
+texture = ExtResource("11_e52uu")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 3600, 4)
+
+[node name="Agua" type="Parallax2D" parent="BackgroundVerao" unique_id=1850464093]
+z_index = -10
+scroll_scale = Vector2(0.3, 1)
+scroll_offset = Vector2(-25, 25)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BackgroundVerao/Agua" unique_id=1563672713]
+position = Vector2(-152, 183)
+sprite_frames = SubResource("SpriteFrames_m4o7o")
+autoplay = "default"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="BackgroundVerao/Agua" unique_id=1660856231]
+position = Vector2(-80, 183)
+sprite_frames = SubResource("SpriteFrames_m4o7o")
+autoplay = "default"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="BackgroundVerao/Agua" unique_id=345107821]
+position = Vector2(-8, 183)
+sprite_frames = SubResource("SpriteFrames_m4o7o")
+autoplay = "default"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="BackgroundVerao/Agua" unique_id=387681253]
+position = Vector2(64, 183)
+sprite_frames = SubResource("SpriteFrames_m4o7o")
+autoplay = "default"
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="BackgroundVerao/Agua" unique_id=1075395511]
+position = Vector2(136, 183)
+sprite_frames = SubResource("SpriteFrames_m4o7o")
+autoplay = "default"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="BackgroundVerao/Agua" unique_id=912621815]
+position = Vector2(208, 183)
+sprite_frames = SubResource("SpriteFrames_m4o7o")
+autoplay = "default"
+
+[node name="Player" parent="." unique_id=1955885901 instance=ExtResource("1_hgi2a")]
+position = Vector2(-28, 3)
+
+[node name="terrain" type="TileMapLayer" parent="." unique_id=880144255]
+tile_map_data = PackedByteArray("AAD8/wIAAAAJAAMAAAADAAIAAAAJAAMAAAAHAAIAAAAJAAMAAAAMAAIAAAAJAAMAAAAFAAIAAAANAAMAAAAJAAIAAAANAAMAAAASAAIAAAANAAMAAAAAAAIAAAANAAMAAAD9/wIAAAAKAAMAAAD+/wIAAAAKAAMAAAD//wIAAAAKAAMAAAAEAAIAAAAKAAMAAAAIAAIAAAAKAAMAAAANAAIAAAAKAAMAAAAOAAIAAAAKAAMAAAAPAAIAAAAKAAMAAAAQAAIAAAAKAAMAAAARAAIAAAAKAAMAAAA=")
+tile_set = ExtResource("2_p7sud")
+
+[node name="decoration" type="TileMapLayer" parent="." unique_id=49107001]
+tile_map_data = PackedByteArray("AAACAAEAAQAMAAUAAAADAAEAAQAMAAUAAAAFAAEAAQAMAAUAAAAEAAEAAQAMAAUAAAA=")
+tile_set = ExtResource("3_p7sud")

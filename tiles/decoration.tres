@@ -1,0 +1,47 @@
+[gd_resource type="TileSet" format=3 uid="uid://4cpcvsp8nix7"]
+
+[ext_resource type="Texture2D" uid="uid://djx1bnia8hau5" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Flowers (16 x 16).png" id="1_4pksi"]
+[ext_resource type="Texture2D" uid="uid://cm0uoncnmeuq1" path="res://sprites/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="2_k56fq"]
+[ext_resource type="Texture2D" uid="uid://dkj46u1402rou" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="3_b4fdq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7cus"]
+texture = ExtResource("1_4pksi")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hjahj"]
+texture = ExtResource("2_k56fq")
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+11:3/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+15:3/0 = 0
+1:1/size_in_atlas = Vector2i(3, 3)
+1:1/0 = 0
+12:6/0 = 0
+12:5/animation_separation = Vector2i(1, 0)
+12:5/animation_mode = 1
+12:5/animation_frame_0/duration = 1.0
+12:5/animation_frame_1/duration = 1.0
+12:5/0 = 0
+13:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lb8v8"]
+texture = ExtResource("3_b4fdq")
+0:0/size_in_atlas = Vector2i(7, 6)
+0:0/0 = 0
+8:0/size_in_atlas = Vector2i(7, 6)
+8:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_y7cus")
+sources/1 = SubResource("TileSetAtlasSource_hjahj")
+sources/2 = SubResource("TileSetAtlasSource_lb8v8")
