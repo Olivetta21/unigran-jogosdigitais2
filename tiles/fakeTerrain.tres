@@ -1,6 +1,8 @@
 [gd_resource type="TileSet" format=3 uid="uid://b6crl7whahymg"]
 
 [ext_resource type="Texture2D" uid="uid://cto8rw5qssn2p" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_1632j"]
+[ext_resource type="Texture2D" uid="uid://bc7g8mqkgrl3g" path="res://sprites/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="2_xf8uh"]
+[ext_resource type="Texture2D" uid="uid://i3np0n4dx1cj" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="3_8otot"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_08qwl"]
 texture = ExtResource("1_1632j")
@@ -42,5 +44,65 @@ texture = ExtResource("1_1632j")
 5:6/0 = 0
 4:8/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33m1b"]
+texture = ExtResource("2_xf8uh")
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+11:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+11:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+15:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+11:4/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+11:5/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+4:8/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frht0"]
+texture = ExtResource("3_8otot")
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+7:1/0 = 0
+9:1/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+4:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+9:4/0 = 0
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_08qwl")
+sources/1 = SubResource("TileSetAtlasSource_33m1b")
+sources/2 = SubResource("TileSetAtlasSource_frht0")

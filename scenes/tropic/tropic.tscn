@@ -1,17 +1,18 @@
 [gd_scene format=4 uid="uid://dx48b5yds2l50"]
 
 [ext_resource type="PackedScene" uid="uid://djf4p0wha1dwc" path="res://entities/player.tscn" id="1_hgi2a"]
+[ext_resource type="Texture2D" uid="uid://bxapjvuhj3r78" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="2_iprrn"]
 [ext_resource type="TileSet" uid="uid://3x0pqko8faqx" path="res://tiles/terrain.tres" id="2_p7sud"]
 [ext_resource type="Texture2D" uid="uid://dsyku1nnjxxew" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/1 - Waters_version_1.png" id="3_l41xp"]
 [ext_resource type="TileSet" uid="uid://4cpcvsp8nix7" path="res://tiles/decoration.tres" id="3_p7sud"]
 [ext_resource type="Texture2D" uid="uid://4o82hbg03tjt" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/5 - Sky_color.png" id="4_l41xp"]
-[ext_resource type="Texture2D" uid="uid://dotjdlm5dc7u5" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/4 - Background_clouds.png" id="5_iiq2t"]
 [ext_resource type="Texture2D" uid="uid://4gvaq16xsruq" path="res://sprites/Seasonal Tilesets/3 - Tropics/Background parts/3 - Floating_clouds.png" id="6_upboy"]
+[ext_resource type="Texture2D" uid="uid://dwoynhkqlhruq" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/grass16x16.png" id="7_bspok"]
 [ext_resource type="Texture2D" uid="uid://ecih5sgsws3o" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_iprrn"]
 [ext_resource type="Texture2D" uid="uid://dh2chjsscdb3k" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/4 - Tree_row_BG_1.png" id="8_bspok"]
 [ext_resource type="Texture2D" uid="uid://ypjgs3am7nmm" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="9_gdii1"]
-[ext_resource type="Texture2D" uid="uid://biv4t7nimre42" path="res://sprites/Seasonal Tilesets/1 - Grassland/Terrain16x16.png" id="10_jcb0n"]
 [ext_resource type="Texture2D" uid="uid://417otembcohx" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/tinygrass16x4.png" id="11_e52uu"]
+[ext_resource type="TileSet" uid="uid://b6crl7whahymg" path="res://tiles/fakeTerrain.tres" id="12_bspok"]
 [ext_resource type="PackedScene" uid="uid://k4oqo5io0xsf" path="res://entities/level_end.tscn" id="13_upboy"]
 [ext_resource type="PackedScene" uid="uid://bff02thgnb0ib" path="res://entities/camera_2d.tscn" id="14_iprrn"]
 
@@ -51,7 +52,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D" unique_id=673082563]
+[node name="Tropic" type="Node2D" unique_id=673082563]
 position = Vector2(-122, 168)
 
 [node name="BackgroundVerao" type="Node" parent="." unique_id=566763063]
@@ -74,7 +75,7 @@ region_rect = Rect2(0, 0, 3600, 600)
 [node name="montanha" type="Sprite2D" parent="BackgroundVerao/Parallax_FundoDistante" unique_id=408903368]
 texture_repeat = 2
 position = Vector2(0, -126)
-texture = ExtResource("5_iiq2t")
+texture = ExtResource("2_iprrn")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 3600, 208)
@@ -137,7 +138,7 @@ scroll_offset = Vector2(-338, 119)
 [node name="subsolo" type="Sprite2D" parent="BackgroundVerao/Parallax_Subsolo" unique_id=1131955009]
 texture_repeat = 2
 position = Vector2(0, 80)
-texture = ExtResource("10_jcb0n")
+texture = ExtResource("7_bspok")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 3600, 256)
@@ -151,6 +152,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 3600, 4)
 
 [node name="Agua" type="Parallax2D" parent="BackgroundVerao" unique_id=1850464093]
+visible = false
 z_index = -10
 scroll_scale = Vector2(0.3, 1)
 scroll_offset = Vector2(-25, 25)
@@ -189,17 +191,20 @@ autoplay = "default"
 position = Vector2(-28, 3)
 
 [node name="terrain" type="TileMapLayer" parent="." unique_id=880144255]
-tile_map_data = PackedByteArray("AAD8/wIAAAAJAAMAAAADAAIAAAAJAAMAAAAHAAIAAAAJAAMAAAAMAAIAAAAJAAMAAAAFAAIAAAANAAMAAAAJAAIAAAANAAMAAAASAAIAAAANAAMAAAAAAAIAAAANAAMAAAD9/wIAAAAKAAMAAAD+/wIAAAAKAAMAAAD//wIAAAAKAAMAAAAEAAIAAAAKAAMAAAAIAAIAAAAKAAMAAAANAAIAAAAKAAMAAAAOAAIAAAAKAAMAAAAPAAIAAAAKAAMAAAAQAAIAAAAKAAMAAAARAAIAAAAKAAMAAAA=")
+tile_map_data = PackedByteArray("AAD8/wIABgACAAMAAAADAAIABgACAAMAAAAHAAIABgACAAMAAAAFAAIABgACAAMAAAASAAIABgACAAMAAAAAAAIABgACAAMAAAD9/wIABgACAAMAAAD+/wIABgACAAMAAAD//wIABgACAAMAAAAEAAIABgACAAMAAAAQAAIABgACAAMAAAARAAIABgACAAMAAAD//wEABgACAAMAAAAAAAEABgACAAMAAAAEAAEABgACAAMAAAAFAAEABgACAAMAAAAGAAIABgACAAMAAAASAAEABgACAAMAAAATAAEABgAEAAEAAAATAAIABgACAAMAAAAUAAIABgACAAMAAAAUAAEABgAEAAEAAAAUAAAABgAEAAEAAAAVAAAABgAEAAEAAAAVAP//BgAEAAEAAAAVAP7/BgAEAAEAAAAWAP7/BgAEAAEAAAAWAP3/BgAEAAEAAAAWAPz/BgAEAAEAAAAWAPv/BgAEAAEAAAAXAPv/BgAEAAEAAAAXAPr/BgAEAAEAAAAXAPn/BgAEAAEAAAAWAPn/BgAEAAEAAAAWAPj/BgAEAAEAAAAVAPj/BgAEAAEAAAAVAPf/BgAEAAEAAAAUAPf/BgAEAAEAAAAUAPb/BgAEAAEAAAATAPb/BgAEAAEAAAATAPX/BgAEAAEAAAASAPX/BgAEAAEAAAASAPT/BgAEAAEAAAARAPT/BgAEAAEAAAAQAPT/BgAEAAEAAAAPAPT/BgAEAAEAAAAOAPT/BgAEAAEAAAANAPT/BgAEAAEAAAAMAPT/BgAEAAEAAAALAPT/BgAEAAEAAAALAPX/BgAEAAEAAAAKAPX/BgAEAAEAAAAJAPX/BgAEAAEAAAAIAPX/BgAEAAEAAAAHAPX/BgAEAAEAAAAHAPb/BgAEAAEAAAAGAPb/BgAEAAEAAAAGAPf/BgAEAAEAAAAGAPj/BgAEAAEAAAAGAPn/BgAEAAEAAAAGAPr/BgAEAAEAAAAGAPv/BgAEAAEAAAAGAPz/BgAEAAEAAAAGAP3/BgAEAAEAAAATAPv/BgAEAAEAAAASAPv/BgAEAAEAAAATAPr/BgAEAAEAAAASAPr/BgAEAAEAAAASAPn/BgAEAAEAAAARAPn/BgAEAAEAAAARAPj/BgAEAAEAAAAQAPj/BgAEAAEAAAAPAPj/BgAEAAEAAAAOAPj/BgAEAAEAAAANAPj/BgAEAAEAAAAMAPj/BgAEAAEAAAALAPj/BgAEAAEAAAAKAPj/BgAEAAEAAAAKAPn/BgAEAAEAAAAJAPn/BgAEAAEAAAAJAPr/BgAEAAEAAAAJAPv/BgAEAAEAAAAPAP7/BgAEAAEAAAAQAP7/BgAEAAEAAAAQAP3/BgAEAAEAAAARAP3/BgAEAAEAAAARAPz/BgAEAAEAAAASAPz/BgAEAAEAAAAKAPv/BgAEAAEAAAANAPv/BgAEAAEAAAAOAPv/BgAEAAEAAAAHAP7/BgAEAAEAAAAHAP3/BgAEAAEAAAAVAP3/BgAEAAEAAAAUAP//BgAEAAEAAAATAAAABgAEAAEAAAAWAPr/BgAEAAEAAAAVAPz/BgAEAAEAAAAKAPr/BgAEAAEAAAAIAAMABgACAAMAAAAIAAQABgACAAMAAAAJAAMABgAEAAEAAAAJAAQABgACAAMAAAAKAAMABgACAAMAAAAKAAQABgACAAMAAAALAAMABgACAAMAAAALAAQABgACAAMAAAAMAAMABgACAAMAAAAMAAQABgACAAMAAAANAAMABgACAAMAAAANAAQABgACAAMAAAAOAAMABgACAAMAAAAOAAQABgACAAMAAAAPAAMABgACAAMAAAAPAAQABgACAAMAAAAJAAAABgAEAAEAAAAKAAAABgAEAAEAAAALAAAABgAEAAEAAAAMAAAABgAEAAEAAAANAAAABgAEAAEAAAAOAAAABgAEAAEAAAAKAPz/BgAEAAEAAAAKAP3/BgAEAAEAAAAPAP//BgAEAAEAAAAIAP//BgAEAAEAAAAOAP//BgAEAAEAAAANAPz/BgAEAAEAAAA=")
 tile_set = ExtResource("2_p7sud")
 
+[node name="TerrenoFalso" type="TileMapLayer" parent="." unique_id=1788799491]
+tile_map_data = PackedByteArray("AAALAPz/AgAJAAQAAAALAP3/AgAJAAQAAAAMAP3/AgAJAAQAAAAOAPv/AQACAAMAAAAPAPv/AQACAAMAAAAPAPr/AQACAAMAAAALAAAAAgAJAAQAAAAMAAAAAgAJAAQAAAAPAPn/AQACAAMAAAAOAPn/AQACAAMAAAALAPr/AgAJAAQAAAAMAPr/AgAJAAQAAAAMAPv/AgAJAAQAAAALAPv/AgAJAAQAAAAMAPz/AgAJAAQAAAAMAP7/AgAJAAQAAAALAP7/AgAJAAQAAAALAP//AgAJAAQAAAAMAP//AgAJAAQAAAAMAAEAAgAJAAQAAAALAAEAAgAJAAQAAAALAAIAAgAJAAQAAAAMAAIAAgAJAAQAAAALAAMAAgAJAAQAAAALAAQAAgAJAAQAAAALAAUAAgAJAAQAAAALAAYAAgAJAAQAAAALAAcAAgAJAAQAAAALAAgAAgAJAAQAAAALAAkAAgAJAAQAAAAKAAwAAgAJAAQAAAAMAAMAAgAJAAQAAAAMAAQAAgAJAAQAAAAMAAUAAgAJAAQAAAAMAAYAAgAJAAQAAAAMAAcAAgAJAAQAAAAMAAgAAgAJAAQAAAAMAAkAAgAJAAQAAAAMAAoAAgAJAAQAAAAMAAsAAgAJAAQAAAALAAsAAgAJAAQAAAALAAoAAgAJAAQAAAA=")
+tile_set = ExtResource("12_bspok")
+
 [node name="decoration" type="TileMapLayer" parent="." unique_id=49107001]
-tile_map_data = PackedByteArray("AAACAAEAAQAMAAUAAAADAAEAAQAMAAUAAAAFAAEAAQAMAAUAAAAEAAEAAQAMAAUAAAA=")
 tile_set = ExtResource("3_p7sud")
 
 [node name="LevelEnd" parent="." unique_id=1032250236 instance=ExtResource("13_upboy")]
-position = Vector2(348, 19.000015)
-rotation = 0.77409816
-scale = Vector2(1.0768945, 3.9999888)
-next_level = "forest/Forest"
+position = Vector2(192, -56.000004)
+rotation = 0.0085271
+scale = Vector2(1.927021, 0.2009612)
+next_level = "tunnel/tunnel"
 
 [node name="Camera2D" parent="." unique_id=692646263 instance=ExtResource("14_iprrn")]
