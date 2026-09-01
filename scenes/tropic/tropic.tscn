@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://ypjgs3am7nmm" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/5 - Tree_row_BG_2.png" id="9_gdii1"]
 [ext_resource type="Texture2D" uid="uid://biv4t7nimre42" path="res://sprites/Seasonal Tilesets/1 - Grassland/Terrain16x16.png" id="10_jcb0n"]
 [ext_resource type="Texture2D" uid="uid://417otembcohx" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/tinygrass16x4.png" id="11_e52uu"]
+[ext_resource type="PackedScene" uid="uid://k4oqo5io0xsf" path="res://entities/level_end.tscn" id="13_upboy"]
+[ext_resource type="PackedScene" uid="uid://bff02thgnb0ib" path="res://entities/camera_2d.tscn" id="14_iprrn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iiq2t"]
 atlas = ExtResource("3_l41xp")
@@ -193,3 +195,11 @@ tile_set = ExtResource("2_p7sud")
 [node name="decoration" type="TileMapLayer" parent="." unique_id=49107001]
 tile_map_data = PackedByteArray("AAACAAEAAQAMAAUAAAADAAEAAQAMAAUAAAAFAAEAAQAMAAUAAAAEAAEAAQAMAAUAAAA=")
 tile_set = ExtResource("3_p7sud")
+
+[node name="LevelEnd" parent="." unique_id=1032250236 instance=ExtResource("13_upboy")]
+position = Vector2(348, 19.000015)
+rotation = 0.77409816
+scale = Vector2(1.0768945, 3.9999888)
+next_level = "forest/Forest"
+
+[node name="Camera2D" parent="." unique_id=692646263 instance=ExtResource("14_iprrn")]

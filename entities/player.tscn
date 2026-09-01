@@ -243,7 +243,3 @@ scale = Vector2(1.25, 1.6875)
 sprite_frames = SubResource("SpriteFrames_m4o7o")
 animation = &"danca"
 frame_progress = 0.6165378
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=163319319]
-position = Vector2(39, -18)
-position_smoothing_enabled = true

@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://cmsk3y7yr10u0"]
 
+[ext_resource type="PackedScene" uid="uid://bff02thgnb0ib" path="res://entities/camera_2d.tscn" id="1_1p5ji"]
 [ext_resource type="PackedScene" uid="uid://djf4p0wha1dwc" path="res://entities/player.tscn" id="1_bfxw3"]
 [ext_resource type="TileSet" uid="uid://3x0pqko8faqx" path="res://tiles/terrain.tres" id="2_t5wam"]
 [ext_resource type="TileSet" uid="uid://4cpcvsp8nix7" path="res://tiles/decoration.tres" id="3_1p5ji"]
@@ -69,6 +70,9 @@ size = Vector2(108.5, 7.5)
 size = Vector2(8, 35)
 
 [node name="Game" type="Node2D" unique_id=150989466]
+
+[node name="Camera2D" parent="." unique_id=692646263 instance=ExtResource("1_1p5ji")]
+position = Vector2(68, 19)
 
 [node name="Player" parent="." unique_id=1955885901 instance=ExtResource("1_bfxw3")]
 position = Vector2(68, 19)

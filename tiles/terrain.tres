@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cto8rw5qssn2p" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Terrain (16 x 16).png" id="1_n2wv8"]
 [ext_resource type="Texture2D" uid="uid://b6iqyjy4miiaq" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Water_frames (16 x 32).png" id="2_1yuku"]
 [ext_resource type="Texture2D" uid="uid://cjs8wom5dvcr3" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Lava_frames (16 x 32).png" id="3_uws2t"]
+[ext_resource type="Texture2D" uid="uid://dbel2rys2qiwf" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/Snack_machine_Bench_Trash_bin (16 x 16).png" id="4_1yuku"]
 [ext_resource type="Texture2D" uid="uid://bjxfjb5kydw4s" path="res://sprites/Seasonal Tilesets/1 - Grassland/Extra_plants (16 x 16).png" id="4_c75tq"]
 [ext_resource type="Texture2D" uid="uid://dkj46u1402rou" path="res://sprites/Seasonal Tilesets/5 - Misc. universal tiles/House (112 x 96).png" id="5_nqh3h"]
 [ext_resource type="Texture2D" uid="uid://cm0uoncnmeuq1" path="res://sprites/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="6_gij2s"]
@@ -129,6 +130,20 @@ texture = ExtResource("3_uws2t")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uws2t"]
+texture = ExtResource("4_1yuku")
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rpqn"]
 texture = ExtResource("4_c75tq")
@@ -356,3 +371,4 @@ sources/4 = SubResource("TileSetAtlasSource_5rpqn")
 sources/5 = SubResource("TileSetAtlasSource_yvoo5")
 sources/7 = SubResource("TileSetAtlasSource_ssgoc")
 sources/8 = SubResource("TileSetAtlasSource_wg16f")
+sources/3 = SubResource("TileSetAtlasSource_uws2t")
